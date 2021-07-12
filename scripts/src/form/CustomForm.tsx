@@ -1,6 +1,6 @@
 import React, { Suspense, lazy, useState } from "react";
 import sanitize from "../sanitize";
-import Form from "react-jsonschema-form";
+import Form from "@rjsf/core";
 import "./form.scss";
 import ArrayFieldTemplate from "./form_templates/ArrayFieldTemplate";
 import ObjectFieldTemplate from "./form_templates/ObjectFieldTemplate";
@@ -141,7 +141,7 @@ interface ICustomFormProps {
   className?: string;
   children?: any;
   omitExtraData?: boolean;
-  tagName?: string;
+  tagName?: keyof JSX.IntrinsicElements;
   responseMetadata?: IResponseMetadata;
   showSubmitOptions?: boolean;
 }
